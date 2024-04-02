@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel=" stylesheet" href="Практическая 2.css">
+
+
+</head>
+
+<body>
+    <h1 class="name">Выполнил: Казаков Егор П-21</h1>
+
+    <p1 class="text">Задание: Ввести строку с клавиатуры. Сосчитать все пробелы.</p1><br>
+    Ввод строки: <input id="first_project">
+    <button id="sabmit">Результат</button>
+
+    <div id="result"></div>
+    <hr>
+
+    <p2 class="text">Задание: Напишите функцию ucFirst(str), которая возвращает строку str с заглавным первым символом
+    </p2><br>
+    Ввод строки: <input id="last_project">
+    <button id="sambit">Результат</button>
+
+    <div id="result2"></div>
+    <hr>
+
+    <p3 class="text">Задание: Напишите функцию checkSpam(str), которая возвращает true,
+        если строка str содержит ‘viagra’ or ‘XXX’. </p3><br>
+    Ввод строки: <input id="third_project">
+    <button id="qwerty">Результат</button>
+
+    <div id="result3"></div>
+    <hr>
+
+    <p4 class="text">Задание: Создайте функцию truncate(str, maxlength), которая проверяет длину строки str,<br>
+        и если она превосходит maxlength — заменяет конец str на '…', так чтобы ее длина стала равна maxlength.</p4><br>
+    Ввод строки: <input id="fourth_project">
+    <button id="werty">Результат</button>
+    Введите размер строки: <input id="number_elements">
+
+    <div id="result4"></div>
+    <hr>
+
+    <script>
+        function showNumbersSpace() {
+            let str = document.getElementById('first_project').value;
+            if (str) {
+                let spaceCount = (str.split(" ").length - 1);
+                let html = 'Результат <b>' + spaceCount + '</b>';
+                document.getElementById('result').innerHTML = html;
+            }
+        }
+        document.getElementById('sabmit').addEventListener('click', showNumbersSpace);
+
+
+        function ucFirst() {
+            let str = document.getElementById('last_project').value;
+            let res;
+            res = str[0].toUpperCase() + str.slice(1);
+            let html = 'Результат <b>' + res + '</b>';
+            document.getElementById('result2').innerHTML = html;
+        }
+        document.getElementById('sambit').addEventListener('click', ucFirst);
+
+        function checkSpam() {
+            let str = document.getElementById('third_project').value;
+            if (str) {
+                let result = (str.includes("viagra") || str.includes("XXX"));
+                let html = 'Результат <b>' + result + '</b>';
+                document.getElementById('result3').innerHTML = html;
+            }
+
+        }
+        document.getElementById('qwerty').addEventListener('click', checkSpam);
+
+
+        function trancate() {
+            let str = document.getElementById('fourth_project').value;
+            let maxlength = document.getElementById('number_elements').value;
+            if (str.length > maxlength) {
+                let html = 'Результат <b>' + (str.slice(0, maxlength) + '...') + '</b>';
+                document.getElementById('result4').innerHTML = html;
+            }
+        }
+        document.getElementById('werty').addEventListener('click', trancate)
+
+    </script>
+</body>
+
+</html>
